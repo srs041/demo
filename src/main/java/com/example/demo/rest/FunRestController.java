@@ -8,7 +8,7 @@ public class FunRestController {
     //expose a / endpoint that returns hello world
     @GetMapping("/")
     public String hello(){
-        return  "Hello World!!!!!!gffg";
+        return  "Hello World!!!!!!";
     }
 
     //exdpose a new endpoing for workout
