@@ -1,5 +1,6 @@
 package com.example.demo.rest;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +16,16 @@ public class FunRestController {
     @GetMapping("/workout")
     public String workout(){
         return "Run 5k steps !!!";
+    }
+
+    @Value("${coach.name}")
+    private String coach;
+    @Value("${team.name}")
+    private  String team;
+
+    @GetMapping("/teaminfo")
+    public String teamInfo(){
+        return coach +"  "+team;
     }
 
 }
