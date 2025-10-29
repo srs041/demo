@@ -13,16 +13,16 @@ public class DemoRestController {
 
 
     //constructor injection
-//    @Autowired
-//    public DemoRestController(Coach coach) {
-//        this.coach = coach;
-//    }
-
-    //setter injection-insted of traditional; setter method any name is fine
     @Autowired
-    public void doStuff(@Qualifier("tennisCoach") Coach coach) {
+    public DemoRestController(/*@Qualifier("baseballCoach")*/ Coach coach) {
         this.coach = coach;
     }
+
+    //setter injection-insted of traditional; setter method any name is fine
+//    @Autowired
+//    public void doStuff(@Qualifier("trackCoach") Coach coach) {
+//        this.coach = coach;
+//    }
 
     @GetMapping("/")
     public String home() {
