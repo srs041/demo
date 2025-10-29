@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.utils;
 
 import org.springframework.stereotype.Component;
 
@@ -8,6 +8,6 @@ public class CricketCoach implements Coach{
 
     @Override
     public String getDailyWorkout() {
-        return "Practice Batting for 15 min";
+        return "Practice Batting for 15 minutes";
     }
 }
