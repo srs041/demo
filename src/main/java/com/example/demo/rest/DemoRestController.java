@@ -10,18 +10,26 @@ public class DemoRestController {
 
     private Coach coach;
 
+
+    //constructor injection
+//    @Autowired
+//    public DemoRestController(Coach coach) {
+//        this.coach = coach;
+//    }
+
+    //setter injection-insted of traditional; setter method any name is fine
     @Autowired
-    public DemoRestController(Coach coach) {
+    public void doStuff(Coach coach) {
         this.coach = coach;
     }
 
     @GetMapping("/")
-    public String home(){
+    public String home() {
         return "Home";
     }
 
     @GetMapping("/dailyworkout")
-    public String getDailyWorkout(){
-       return coach.getDailyWorkout();
+    public String getDailyWorkout() {
+        return coach.getDailyWorkout();
     }
 }
