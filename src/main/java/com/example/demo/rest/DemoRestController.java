@@ -15,7 +15,7 @@ public class DemoRestController {
     //constructor injection
     @Autowired
     public DemoRestController(
-            @Qualifier("cricketCoach") Coach coach//
+            @Qualifier("Aquatic") Coach coach//
             // ,@Qualifier("cricketCoach") Coach anothercoach
     ) {
         System.out.println("Constructor : " + getClass().getSimpleName());
