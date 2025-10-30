@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoRestController {
 
     private Coach coach;
-    private Coach anothercoach;
+   // private Coach anothercoach;
 
     //constructor injection
     @Autowired
     public DemoRestController(
-            @Qualifier("cricketCoach") Coach coach,
-            @Qualifier("cricketCoach") Coach anothercoach
+            @Qualifier("cricketCoach") Coach coach//
+            // ,@Qualifier("cricketCoach") Coach anothercoach
     ) {
         System.out.println("Constructor : " + getClass().getSimpleName());
-        this.anothercoach = anothercoach;
+      //  this.anothercoach = anothercoach;
         this.coach = coach;
     }
 
@@ -39,8 +39,10 @@ public class DemoRestController {
         return coach.getDailyWorkout();
     }
 
-    @GetMapping("/scope")
-    public String checkScope() {
-        return "Check Bean scope "+(coach==anothercoach);
-    }
+//    @GetMapping("/scope")
+//    public String checkScope() {
+//        return "Check Bean scope "+(coach==anothercoach);
+//    }
+
+
 }
